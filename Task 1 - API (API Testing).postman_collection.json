@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "2d10d819-4d5a-41d0-8da6-77be97333721",
+		"name": "Task 1 - API (API Testing)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All breeds",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "81b229af-7fe6-424d-bc65-72523157b164",
+						"exec": [
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dog.ceo/api/breeds/list/all",
+					"protocol": "https",
+					"host": [
+						"dog",
+						"ceo"
+					],
+					"path": [
+						"api",
+						"breeds",
+						"list",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " verification",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "81b229af-7fe6-424d-bc65-72523157b164",
+						"exec": [
+							"\r",
+							"//Performs verfication on the keyword retriver to see if found on the listed dog breed \r",
+							"\r",
+							"pm.test(\" verify “retriever” breed is within the list\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"retriever\");\r",
+							"});\r",
+							"\r",
+							"// finally giving status 200 ok meaning verfication of the keyword is found and successful with an indication of a pass in green in the Test Results . \r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dog.ceo/api/breeds/list/all",
+					"protocol": "https",
+					"host": [
+						"dog",
+						"ceo"
+					],
+					"path": [
+						"api",
+						"breeds",
+						"list",
+						"all"
+					]
+				},
+				"description": " verify “retriever” breed is within the list"
+			},
+			"response": []
+		},
+		{
+			"name": "Sub-Breeds ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7de5b858-f341-466b-84bd-78b254ed62b7",
+						"exec": [
+							"//  Perform an API request \"https://dog.ceo/api/breed/retriever/list\" to produce a list of sub-breeds for “retriever. ",
+							"// This is displayed in the body as to no offical code is written , because this was just a request . "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dog.ceo/api/breed/retriever/list",
+					"protocol": "https",
+					"host": [
+						"dog",
+						"ceo"
+					],
+					"path": [
+						"api",
+						"breed",
+						"retriever",
+						"list"
+					]
+				},
+				"description": "Perform an API request to produce a list of sub-breeds for “retriever"
+			},
+			"response": []
+		},
+		{
+			"name": "Random image link for golden retriver",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3778588f-f10c-45ed-a217-6be1c2fd7181",
+						"exec": [
+							"//Perform an API request \"https://dog.ceo/api/breed/retriever-golden/images \" to produce a random imagelink for the sub-breed “golden. "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dog.ceo/api/breed/retriever-golden/images/random",
+					"protocol": "https",
+					"host": [
+						"dog",
+						"ceo"
+					],
+					"path": [
+						"api",
+						"breed",
+						"retriever-golden",
+						"images",
+						"random"
+					]
+				},
+				"description": "Perform an API request to produce a random image / link for the sub-breed “golden"
+			},
+			"response": []
+		}
+	]
+}
